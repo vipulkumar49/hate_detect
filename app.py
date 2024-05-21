@@ -20,6 +20,10 @@ def load_model(model_name):
             model_path = "vipulkumar49/hate_detect_bert"
             model = AutoModelForSequenceClassification.from_pretrained(model_path)
             tokenizer = AutoTokenizer.from_pretrained(model_path)
+        elif model_name == "GPT2":
+            model_path = "DrZombiee/GPTHateSpeech"
+            tokenizer = AutoTokenizer.from_pretrained(model_path)
+            model = AutoModelForSequenceClassification.from_pretrained(model_path)
         else:
             raise ValueError("Invalid model selected.")
         return model, tokenizer
@@ -50,7 +54,7 @@ st.title("Hate Detect")
 st.write("Use this app to classify whether a given text contains hate speech.")
 
 st.sidebar.title("Model Selection")
-model_name = st.sidebar.selectbox("Select Model", ["DistilBERT", "RoBERTa", "BERT"])
+model_name = st.sidebar.selectbox("Select Model", ["DistilBERT", "RoBERTa", "BERT", "GPT2"])
 
 # Load the selected model
 with st.spinner("Loading model..."):
