@@ -13,7 +13,7 @@ def load_model(model_name):
             model = AutoModelForSequenceClassification.from_pretrained(model_path)
             tokenizer = AutoTokenizer.from_pretrained(model_path)
         elif model_name == "RoBERTa":
-            model_path = "vipulkumar49/hate_detect_roberta"
+            model_path = "DrZombiee/Roberta_hate_speech"
             model = RobertaForSequenceClassification.from_pretrained(model_path)
             tokenizer = RobertaTokenizer.from_pretrained(model_path)
         elif model_name == "BERT":
