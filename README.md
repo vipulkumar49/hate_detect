@@ -1,1 +1,1 @@
-# hate_detect
+# Hate Detect
